@@ -24,8 +24,10 @@
 						</tr>
 					</thead>
 					<tbody>
+                    <?php if(!empty($products)):?>
 						<?php foreach($products as $product): ?>
 						<tr>
+                        
 							<td>
 								<?php echo $product->name ?>
 							</td>
@@ -39,7 +41,14 @@
 								<?php echo substr($product->description, 0, 120) ?>...
 							</td>
 						</tr>
-					<?php endforeach; ?>
+                    <?php endforeach; 
+                    else: ?>
+                    <tr>
+                        <td colspan="4">
+                            <p class="text-center">Data tidak ditemukan</p>
+                        </td>
+                    </tr>
+                        <?php endif; ?>
 					</tbody>
 				</table>
 

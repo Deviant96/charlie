@@ -13,10 +13,6 @@
 		<div class="col-sm">
 			<h1>Cari Kendaraan yang Bagus untuk Anda!</h1>
 
-			<?php echo form_open('main/search') ?>
-				<input type="text" name="keyword" placeholder="search">
-				<input type="submit" name="search_submit" value="Cari">
-			<?php echo form_close() ?>
 
 				<table class="table table-striped table-bordered table-hover">
 					<thead>

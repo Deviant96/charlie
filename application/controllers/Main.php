@@ -16,7 +16,7 @@ class Main extends CI_Controller {
 	}
 
 	public function search() {
-		$keyword = $this->input->post('keyword');
+		$keyword = $this->input->post('search');
 		$data['products']=$this->product_model->get_product_keyword($keyword);
 		$this->load->view('search', $data);
 	}

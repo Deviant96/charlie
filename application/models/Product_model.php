@@ -99,4 +99,12 @@ class Product_model extends CI_Model
             return array_map ('unlink', glob(FCPATH."upload/product/$filename.*"));
         }
     }
+
+    public function get_product_keyword($keyword){
+        $this->db->select('*');
+        $this->db->from($this->_table);
+        $this->db->like('name',$keyword);
+        $this->db->or_like('price',$keyword);
+        return $this->db->get()->result();
+    }
 }

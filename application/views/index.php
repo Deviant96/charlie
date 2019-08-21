@@ -1,26 +1,12 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title><?php echo SITE_NAME .": ". ucfirst($this->uri->segment(1)) ." - ". ucfirst($this->uri->segment(2))?></title>
-
-  <!-- Custom fonts for this template-->
-  <link href="<?php echo base_url('assets/fontawesome-free/css/all.min.css')?>" rel="stylesheet" type="text/css">
-
-  <!-- Page level plugin CSS-->
-  <link href="<?php echo base_url('assets/datatables/dataTables.bootstrap4.css')?>" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="<?php echo base_url('css/sb-admin.css')?>" rel="stylesheet">
+  <?php $this->load->view("_partials/head.php")?>
 </head>
+
 <body>
+
+	<?php $this->load->view("_partials/navbar.php")?>
 
 <div class="container">
 	<div class="row">
@@ -32,7 +18,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<input type="submit" name="search_submit" value="Cari">
 			<?php echo form_close() ?>
 
-			<div id="body">
 				<table class="table table-striped table-bordered table-hover">
 					<thead>
 						<tr>
@@ -61,21 +46,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<?php endforeach; ?>
 					</tbody>
 				</table>
-			</div>
 
 			
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col-sm">
-		</div>
-		<div class="col-sm">
-		<p class="small">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?><br>
-			If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.	</p>
-		</div>
-	</div>
+		<?php $this->load->view("_partials/footer.php")?>
+
+	
+
+	
 </div>
+
+
+
+	<?php $this->load->view("_partials/scrolltop.php")?>
+	<?php $this->load->view("_partials/modal.php")?>
+	<?php $this->load->view("_partials/js.php")?>
 
 </body>
 </html>

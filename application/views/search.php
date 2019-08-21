@@ -1,17 +1,20 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+  <?php $this->load->view("_partials/head.php")?>
 </head>
+
 <body>
-	<?php echo form_open('product/search') ?>
-		<input type="text" name="keyword" placeholder="search">
-		<input type="submit" name="search_submit" value="Cari">
-	<?php echo form_close() ?>
- 
-	<table>
- 
-    <table class="table table-striped table-bordered table-hover">
+
+	<?php $this->load->view("_partials/navbar.php")?>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm">
+			<h1>Hasil pencarian ...</h1>
+
+
+				<table class="table table-striped table-bordered table-hover">
 					<thead>
 						<tr>
 							<th>Nama Kendaraan</th>
@@ -39,8 +42,23 @@
 					<?php endforeach; ?>
 					</tbody>
 				</table>
- 
- 
-	</table>
+
+			
+		</div>
+	</div>
+
+		<?php $this->load->view("_partials/footer.php")?>
+
+	
+
+	
+</div>
+
+
+
+	<?php $this->load->view("_partials/scrolltop.php")?>
+	<?php $this->load->view("_partials/modal.php")?>
+	<?php $this->load->view("_partials/js.php")?>
+
 </body>
 </html>

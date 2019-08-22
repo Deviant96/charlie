@@ -87,8 +87,8 @@ class Product_model extends CI_Model
         if($this->upload->do_upload('image')) {
             return $this->upload->data("file_name");
         }
-        print_r($this->upload->display_errors());
-        //return "default.jpg";
+        //print_r($this->upload->display_errors());         // Akan menampilkan error jika tidak upload gambar
+        return "default.jpg";
     }
 
     public function _deleteImage()

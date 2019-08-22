@@ -13,8 +13,7 @@
 		<div class="col-sm">
 			<h1>Cari Kendaraan yang Bagus untuk Anda!</h1>
 
-
-				<table class="table table-striped table-bordered table-hover">
+				<table  id="mainPanel" class="table table-striped table-bordered table-hover">
 					<thead>
 						<tr>
 							<th>Nama Kendaraan</th>
@@ -49,12 +48,7 @@
 
 		<?php $this->load->view("_partials/footer.php")?>
 
-	
-
-	
 </div>
-
-
 
 	<?php $this->load->view("_partials/scrolltop.php")?>
 	<?php $this->load->view("_partials/modal.php")?>

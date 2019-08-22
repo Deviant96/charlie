@@ -1,73 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <?php $this->load->view("_partials/head.php")?>
-</head>
+<thead>
+	<tr>
+		<th>Nama Kendaraan</th>
+		<th>Harga</th>
+		<th>Foto</th>
+		<th>Deskripsi</th>
+	</tr>
+</thead>
+<tbody>
 
-<body>
+<?php
+if(!empty($searchproduct ))  
+{ 
+	$output = '';
+	$outputdata = '';  
+	$outputtail ='';
+	foreach ($searchproduct as $objects)    
+	{   
+		$outputdata .= ' 
+			<tr> 
+				<td>'.$objects->name.'</td>
+				<td>'.$objects->price.'</td>
+				<td><img class=img-thumbnail src='.base_url('upload/product/'.$objects->image).' width=64 /></td>
+				<td>'.$objects->description.'</td>
+			</tr> 
+		';
+		//  echo $outputdata; 		
+	}  
 
-	<?php $this->load->view("_partials/navbar.php")?>
-
-<div class="container">
-	<div class="row">
-		<div class="col-sm">
-			<h1>Hasil pencarian ...</h1>
-
-
-				<table class="table table-striped table-bordered table-hover">
-					<thead>
-						<tr>
-							<th>Nama Kendaraan</th>
-							<th>Harga</th>
-							<th>Foto</th>
-							<th>Deskripsi</th>
-						</tr>
-					</thead>
-					<tbody>
-                    <?php if(!empty($products)):?>
-						<?php foreach($products as $product): ?>
-						<tr>
-                        
-							<td>
-								<?php echo $product->name ?>
-							</td>
-							<td>
-								<?php echo $product->price ?>
-							</td>
-							<td>
-								<img class="img-thumbnail" src="<?php echo base_url('upload/product/'.$product->image) ?>" width="64" />
-							</td>
-							<td class="small">
-								<?php echo substr($product->description, 0, 120) ?>...
-							</td>
-						</tr>
-                    <?php endforeach; 
-                    else: ?>
-                    <tr>
-                        <td colspan="4">
-                            <p class="text-center">Data tidak ditemukan</p>
-                        </td>
-                    </tr>
-                        <?php endif; ?>
-					</tbody>
-				</table>
-
-			
-		</div>
-	</div>
-
-		<?php $this->load->view("_partials/footer.php")?>
-
-	
-
-	
-</div>
-
-
-
-	<?php $this->load->view("_partials/scrolltop.php")?>
-	<?php $this->load->view("_partials/modal.php")?>
-	<?php $this->load->view("_partials/js.php")?>
-
-</body>
-</html>
+	$outputtail .= ' 
+	</tbody>
+	';
+	echo $output; 
+	echo $outputdata; 
+	echo $outputtail; 
+}  
+else  
+{  
+	echo "<td colspan=4 class=text-center>Tidak ditemukan..</td>";
+} 

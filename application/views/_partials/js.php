@@ -24,3 +24,18 @@
 
   <!-- Demo scripts for this page-->
   <script src="<?php echo base_url('js/demo/datatables-demo.js')?>"></script>
+
+  <script>
+$(document).ready(function(){
+   $("#search").keyup(function(){
+       var str=  $("#search").val();
+       if(str == "") {
+               //$( "#mainPanel" ).html("<b>Book information will be listed here...</b>"); 
+       }else {
+               $.get( "<?php echo base_url();?>main/search?search="+str, function( data ){
+                   $( "#mainPanel" ).html( data );  
+            });
+       }
+   });  
+});  
+</script>

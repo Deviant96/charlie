@@ -16,8 +16,17 @@ class Main extends CI_Controller {
 	}
 
 	public function search() {
-		$keyword = $this->input->post('search');
-		$data['products']=$this->product_model->get_product_keyword($keyword);
-		$this->load->view('search', $data);
+		//$keyword = $this->input->post('search');
+		//$data['products']=$this->product_model->get_product_keyword($keyword);
+		//$this->load->view('search', $data);
+		if(is_null($this->input->get('search')))
+        {
+        	//$this->load->view('input');
+        }
+        else
+        {
+			$data['searchproduct']=$this->product_model->get_product_keyword($this->input->get('search')); 
+			$this->load->view('search',$data);
+        }
 	}
 }

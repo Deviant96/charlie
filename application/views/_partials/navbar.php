@@ -7,15 +7,12 @@
     </button>
 
     <!-- Navbar Search -->
-    <?php echo form_open('main/search', 'class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0"') ?>
+    <form action="" method="get" class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+    <?php // echo form_open('main/search', '') ?>
       <div class="input-group">
-        <input type="text" name="search" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
+        <input autocomplete="off" id="search" name="search" type="text" class="form-control input-lg" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
       </div>
-    <?php echo form_close() ?>
+    <?php // echo form_close() ?>
+    </form>
     
   </nav>

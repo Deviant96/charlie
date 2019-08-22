@@ -41,7 +41,7 @@ class Products extends CI_Controller
 
         if($validation->run()) {                        // Melakukan validasi
             $product->update();                         // Menyimpan data
-            $this->session->set_flashdata('success', 'Berhasil disimpan'); 
+            $this->session->set_flashdata('success', 'Berhasil diupdate'); 
         }
 
         $data["product"] = $product->getById($id);      // Mengambil data untuk ditampilkan pada form

@@ -14,3 +14,6 @@
 
 <!-- Custom styles for this template-->
 <link href="<?php echo base_url('css/sb-admin.css')?>" rel="stylesheet">
+
+
+<link href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet">
